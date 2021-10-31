@@ -2,7 +2,7 @@ import PriceLister
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
 hostName = "localhost"
-serverPort = 8081
+serverPort = 8080
 
 f = open("calculator.html", "r")
 htmlPageText = f.read()
