@@ -61,6 +61,12 @@ class MyServer(BaseHTTPRequestHandler):
                 htmlPageText1 = htmlPageText1.replace("<!-- {{ CEX_loss-value }} -->", str(bDeltaPercentCEX))
                 htmlPageText1 = htmlPageText1.replace("<!-- {{ DEX_loss-value }} -->", str(bDeltaPercentDEX))
 
+
+                delta_prices = abs(Round(bRealExchangeCEX - bRealExchangeDEX, 2))
+                delta_percents = Round(bDeltaPercentCEX - bDeltaPercentDEX, 2)
+
+                htmlPageText1 = htmlPageText1.replace("<!-- {{ delta_prices }} -->", str(delta_prices))
+                htmlPageText1 = htmlPageText1.replace("<!-- {{ delta_percents }} -->", str(delta_percents))
             else:
                 prices_Sell = PriceLister.GetSellingPrice(resp["token1"], resp["token2"], float(resp["amount"]))
 
@@ -80,6 +86,13 @@ class MyServer(BaseHTTPRequestHandler):
 
                 htmlPageText1 = htmlPageText1.replace("<!-- {{ CEX_loss-value }} -->", str(sDeltaPercentCEX))
                 htmlPageText1 = htmlPageText1.replace("<!-- {{ DEX_loss-value }} -->", str(sDeltaPercentDEX))
+
+                delta_prices = abs(Round(sRealExchangeCEX - sRealExchangeDEX, 2))
+                delta_percents = Round(sDeltaPercentCEX - sDeltaPercentDEX, 2)
+
+                htmlPageText1 = htmlPageText1.replace("<!-- {{ delta_prices }} -->", str(delta_prices))
+                htmlPageText1 = htmlPageText1.replace("<!-- {{ delta_percents }} -->", str(delta_percents))
+
         else:
             htmlPageText1 = htmlPageText1.replace("\{\{ result_display \}\}", "none")
 

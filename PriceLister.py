@@ -40,7 +40,7 @@ def GetBuyingPrice(token1, token2, amount):
     
     cex_buying.CreateAsks()
     dictionary_CEX_Buy = cex_buying.Calculate()
-
+    
     dex_buy.CreateAsks()
     dictionary_DEX_Buy = dex_buy.Calculate()
     

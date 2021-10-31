@@ -42,19 +42,24 @@
             position: absolute;
             height: 10vh;
             width: auto;
-            top: 3vh;
-            left: 3vw;
+            top: -10vh;
+          }
+          .red-c{
+            color: #b81717;
+          }
+          .green-c{
+            color: #31b98e;
           }
         </style>
     </head>
     <body>
       
-      <img class="logo" src="https://i.ibb.co/McR4Ss4/logo.png"alt="">
 
 
       <div class="container-fluid h-100">
         <div class="row justify-content-center align-items-center h-100">
-            <div class="col col-sm-6 col-md-6 col-lg-5 p-4 rounded1">
+            <div class="col col-sm-6 col-md-6 col-lg-5 p-4 rounded1" style="position: relative;">
+              <img class="logo" src="https://i.ibb.co/McR4Ss4/logo.png"alt="">
               
                 <form action="?action">
 
@@ -85,7 +90,7 @@
                     </div>
                   </div>
                     <div class="form-group">
-                        <input class="form-control form-control-lg" value="1000" placeholder="Amount" type="number" name="amount">
+                        <input class="form-control form-control-lg" value="10000" placeholder="Amount" type="number" name="amount">
                     </div>
 
                     <div class="row">
@@ -117,7 +122,7 @@
                     <div class="col-4">
                       Expected Price: 
                     </div>
-                    <div class="col-5 text-center font-weight-bold">
+                    <div class="col-5 text-center">
                       <!-- {{ exp_price-value }} -->
                     </div>
                     <div class="col-3"></div>
@@ -127,25 +132,38 @@
                     <div class="col-4">
                       Real Price on CEX: 
                     </div>
-                    <div class="col-5  text-center font-weight-bold">
+                    <div class="col-5  text-center">
                       <!-- {{ real_price-CEX-value }} -->
                     </div>
-                    <div class="col-3 text-right font-weight-bold">
+                    <div class="col-3 text-right font-weight-bold red-c">
                       <!-- {{ CEX_loss-value }} -->% loss
                     </div>
                   </div>
   
-                  <div class="row justify-content-between align-items-center cw">
+                  <div class="row justify-content-between align-items-center cw mb-1">
                     <div class="col-4">
                       Real Price on DEX: 
                     </div>
-                    <div class="col-5  text-center font-weight-bold">
+                    <div class="col-5  text-center">
                        <!-- {{ real_price-DEX-value }} -->
                     </div>
-                    <div class="col-3 text-right font-weight-bold">
+                    <div class="col-3 text-right font-weight-bold green-c">
                       <!-- {{ DEX_loss-value }} -->% loss
                     </div>
                   </div>
+
+                  <div class="row justify-content-between align-items-center cw">
+                    <div class="col-4 font-weight-bold">
+                      Using DEX you save:
+                    </div>
+                    <div class="col-5  text-center font-weight-bold">
+                       <!-- {{ delta_prices }} -->
+                    </div>
+                    <div class="col-3 text-right font-weight-bold">
+                      <!-- {{ delta_percents }} -->%
+                    </div>
+                  </div>
+
                 </div>
                 
             </div>
