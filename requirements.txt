@@ -1,1 +1,4 @@
+Django==3.2.8
+django_heroku==0.3.1
+Flask==2.0.2
 requests==2.26.0
