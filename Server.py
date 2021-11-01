@@ -4,7 +4,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 hostName = "localhost"
 serverPort = 8080
 
-f = open("calculator.html", "r")
+f = open("templates/calculator.html", "r")
 htmlPageText = f.read()
 f.close()
 
